@@ -1,0 +1,9 @@
+.forms-body-styles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.forms-body-styles {
+  flex-direction: column;
+}

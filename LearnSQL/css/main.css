@@ -1,0 +1,57 @@
+/* General CSS*/
+
+.body-styles,
+.button-container,
+.note-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.body-styles {
+  flex-direction: column;
+}
+
+/* Buttons CSS*/
+
+.button-container {
+  flex-direction: row;
+}
+.button-styles {
+  padding: 8px; 
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  background-color: lightgray;
+  cursor: pointer;
+  color: black;
+}.button-styles:hover {
+  opacity: 0.7;
+}
+
+/* Notes CSS*/
+
+.notes-container {
+  width: 50rem;
+  height: 40rem;
+  background-color: lightgray;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 1rem;
+  overflow-x: scroll;
+}
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+}
+.note-styles {
+  background-color: rgb(253, 174, 69);
+  border-radius: 0.5rem;
+  padding: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.note-content {
+  flex-direction: column;
+}

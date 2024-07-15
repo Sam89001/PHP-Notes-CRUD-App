@@ -1,0 +1,24 @@
+//Table SQL
+
+CREATE TABLE notes (
+	id INT(11) NOT NULL AUTO_INCREMENT,
+    note_title VARCHAR(255) NOT NULL,
+	note_description TEXT,
+    date_created DATETIME NOT NULL DEFAULT  CURRENT_TIME,
+    PRIMARY KEY (id)
+);
+
+
+//Insert Data
+
+INSERT INTO notes (note_title, note_description) VALUES ('example note', 'This is an example note! Hello!')
+
+
+//Update Data
+
+UPDATE notes SET note_title = 'update example note AFTER update', note_description = 'This is an example note AFTER update!' WHERE id = 2
+
+
+//Delete Data 
+
+DELETE FROM notes WHERE id = 3;
