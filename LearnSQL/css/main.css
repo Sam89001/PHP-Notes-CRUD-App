@@ -40,11 +40,13 @@
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 1rem;
   padding: 1rem;
+  
   overflow-x: scroll;
 }
 .notes-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 20px;
 }
 .note-styles {
   background-color: rgb(253, 174, 69);

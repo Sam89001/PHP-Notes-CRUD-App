@@ -63,11 +63,6 @@
 
   <div class="button-container" >
     <a href="forms/create_note.php" class="button-styles">Create Note</a>
-    <button class="button-styles">Edit Note</button>
-  </div>
-
-  <div class="button-container" style="margin-bottom: 1rem">
-    <button class="button-styles">Delete Note</button>
   </div>
 
   <div class="notes-container">
@@ -76,14 +71,29 @@
       <!-- For Each for the notes -->
       <?php
         foreach ($notes as $note) {
-          echo '<div class="note-styles" id="note-' . $note->id . '">';
-          echo '<div class="note-content">';
-          echo '<div class="note-title">' . htmlspecialchars($note->note_title) . '</div>';
-          echo '<div class="note-description">' . htmlspecialchars($note->note_description) . '</div>';
-          echo '</div>';
-          echo '</div>';
+            echo '<div class="note-styles" id="note-' . $note->id . '">';
+              echo '<div class="note-content">';
+                echo '<div style="padding-bottom: 5px;">' . htmlspecialchars($note->note_title) . '</div>';
+                echo '<div style="padding-bottom: 5px;">' . htmlspecialchars($note->note_description) . '</div>';
+                echo '<div style="display: flex; flex-direction: row;">';
+                  echo '<a style=" border-right: solid 1px black; padding-right: 5px;" href="forms/edit_note.php?id=' . $note->id . '">Update</a>';
+
+                  echo '<form action="includes/deleteNoteHandler-inc.php" method="post">';
+                    echo '<input type="hidden" name="note_id" value="' . $note->id . '">';
+                    echo '<button 
+                            type="submit" 
+                            onclick="return confirm(\'Are you sure you want to delete?\')"
+                            style="display: inline-block; border: none; background-color: transparent; text-decoration: underline; cursor: pointer;"
+                          >Delete
+                          </button>';
+                  echo '</form>';
+
+                echo '</div>'; 
+              echo '</div>'; 
+            echo '</div>'; 
         }
       ?>
+
 
     </div>
   </div>
